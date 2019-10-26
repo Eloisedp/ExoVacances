@@ -12,5 +12,7 @@
       <li>Description : {{ $article->description }}</li>
     </ul>
     @endforeach
+
+    <a href="{{ URL::action('ArticleController@create') }}">Ajouter un article</a> <br>
   </body>
 </html>

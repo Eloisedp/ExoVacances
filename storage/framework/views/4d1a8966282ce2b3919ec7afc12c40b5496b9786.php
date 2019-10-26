@@ -7,10 +7,10 @@
     <h1> Bonjour </h1>
         <?php echo Form::open(['url' => 'articles']); ?>
 
-            !! Form::label('nom', 'Entrez votre nom : ') !!}
-            <?php echo Form::text('nom'); ?>
-
-            <?php echo Form::submit('Envoyer !'); ?>
+            <p><?php echo e(Form::label('name', 'Nom :')); ?> <?php echo e(Form::text('title')); ?></p>
+            <p><?php echo e(Form::label('number', 'Prix :')); ?> <?php echo e(Form::number('number')); ?></p>
+            <p><?php echo e(Form::label('content', 'Description :')); ?> <?php echo e(Form::textarea('content')); ?></p>
+            <?php echo Form::submit('Ajouter !'); ?>
 
         <?php echo Form::close(); ?>
 

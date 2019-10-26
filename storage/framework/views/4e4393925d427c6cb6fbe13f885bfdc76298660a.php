@@ -12,5 +12,7 @@
       <li>Description : <?php echo e($article->description); ?></li>
     </ul>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+    <a href="<?php echo e(URL::action('ArticleController@create')); ?>">Ajouter un article</a> <br>
   </body>
 </html><?php /**PATH /app/resources/views/articles/index.blade.php ENDPATH**/ ?>

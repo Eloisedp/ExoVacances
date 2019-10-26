@@ -25,4 +25,8 @@ Route::get('/articles/{id}/delete', 'ArticleController@destroy')->where('id', '[
 
 Route::get('/articles/{id}/edit', 'ArticleController@edit');
 
-Route::post('articles/{id}/update', 'ArticleController@update');
+Route::post('/articles/{id}/update', 'ArticleController@update');
+
+Route::get('/articles/create', 'ArticleController@create');
+
+Route::put('/articles/create', 'ArticleController@store');

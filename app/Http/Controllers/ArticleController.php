@@ -25,7 +25,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        $article= new Article();
+        return view('articles.create', compact('article'));
     }
 
     /**
@@ -36,7 +37,10 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $article = new Article();
+            $inputs = $request->input();
+            $article = Post::create($inputs);
+         return redirect()->back();
     }
 
     /**
@@ -72,7 +76,9 @@ class ArticleController extends Controller
      */
     public function update(Request $request)
     {
-        return $request->input();
+        $article = Article::where('id', $id)->firstOrFail(); /* trouve l'entrée en DB */
+        $article->update($request->intersect(['nom', 'prix','description'])); /*récupère les valeurs suivantes */
+        return redirect()->back(); /* redirige vers la vue d'édition */
     }
 
     /**
